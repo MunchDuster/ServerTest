@@ -10,7 +10,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 let collection
 
-client.connect((err) => {
+client.connect(async (err) => {
 	if (err) {
 		console.error(`Failed to connect to database: err`)
 		return
@@ -23,12 +23,19 @@ client.connect((err) => {
 	// Clear database
 	// collection.deleteMany({});
 
+	var data = await collection.find({});
+
+
+
 	//Listen for the main page
 	app.get('/', function (req, res) {
 		console.log('get request recieved!')
-		res.sendFile(__dirname + 'client/index.html')
+		res.sendFile(__dirname + '/index.html')
 	});
 
 	//Start the server
 	app.listen(PORT, () => { console.log(`listening on port: ${PORT}`); })
+
+	// Ensures that the client will close
+	client.close();
 })
