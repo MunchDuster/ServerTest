@@ -1,0 +1,23 @@
+{
+  "name": "unity-servertest",
+  "version": "1.0.0",
+  "description": "Test server to see if unity can get ans set data to it",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munchduster/servertest.git"
+  },
+  "author": "MunchDuster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/munchduster/servertest/issues"
+  },
+  "homepage": "https://github.com/munchduster/servertest#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
