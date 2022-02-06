@@ -25,10 +25,10 @@ client.connect((err) => {
 
 	//Listen for the main page
 	app.get('/', function (req, res) {
-		console.log('get request recieved!');
-		res.status(200).send("success");
+		console.log('get request recieved!')
+		res.sendFile(__dirname + 'client/index.html')
 	});
 
 	//Start the server
-	app.listen(PORT, () => { console.log(`listening on port: ${PORT}`); });
+	app.listen(PORT, () => { console.log(`listening on port: ${PORT}`); })
 })
